@@ -122,6 +122,7 @@ def check_subs(message):
 
                 if end_date and today > end_date:
                     bot.kick_chat_member(channel, user.id)
+                    user.remove()
                     count += 1
 
             bot.send_message(boss, f'Кикнуто {count}')
